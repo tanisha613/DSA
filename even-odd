@@ -1,0 +1,54 @@
+// https://www.geeksforgeeks.org/problems/odd-or-even3618/1
+solution 1 //by finding remainder
+class Solution {
+    static boolean isEven(int n) {
+        // code here
+        if(n%2==0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+Time Complexity – O(1)
+Space Complexity – O(1)
+
+solution 2 //using bitwise and operator
+//concept-The last bit of all odd numbers is always 1, while for even numbers it’s 0. So, when performing bitwise AND operation with 1, odd numbers give 1, and even numbers give 0.
+
+Ex: 5 (101)  -> 101
+                    &  001
+                       —-
+                       001 , so this we can say it is an odd number.
+                       
+class Solution {
+    static boolean isEven(int n) {
+        // code here
+        if((n&1)==0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+Time Complexity – O(1)
+Space Complexity – O(1)
+
+solution 3//Using Bitwise Shift Operators
+concept-Right shifting n >> 1 removes the last bit. Shifting back restores it. If the result matches the original number, it’s even.
+class Solution {
+    static boolean isEven(int n) {
+        // code here
+        if(n==(n>>1)<<1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+
+Time Complexity – O(1)
+Space Complexity – O(1)
